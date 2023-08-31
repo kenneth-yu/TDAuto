@@ -15,6 +15,7 @@ import {
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: 'icon', href: '/favicon.png', type: 'image/png' },
 ];
 
 export default function App() {
