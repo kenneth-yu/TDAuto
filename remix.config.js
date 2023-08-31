@@ -12,8 +12,15 @@ const baseConfig =
 module.exports = {
   ...baseConfig,
   ignoredRouteFiles: ["**/.*"],
+  serverModuleFormat: "cjs",
   // See https://remix.run/docs/en/main/file-conventions/route-files-v2
   future: {
+    // v2_routeConvention: true,
+    v2_dev: true,
+    v2_errorBoundary: true,
+    v2_headers: true,
+    v2_meta: true,
+    v2_normalizeFormMethod: true,
     v2_routeConvention: true,
   }
   // add your own custom config here if you want to.
