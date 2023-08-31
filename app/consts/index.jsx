@@ -10,3 +10,13 @@ export const ElectricalIcon = <span className="material-symbols-outlined service
 export const InspectionIcon = <span className="material-symbols-outlined service-icon">location_city</span>
 
 export const ChevronRight = <span className="material-symbols-outlined chevron-right">chevron_right</span>
+
+export const PhoneIcon = <span class="material-symbols-outlined contact-icon">call</span>
+
+export const CellphoneIcon = <span class="material-symbols-outlined contact-icon">phone_iphone</span>
+
+export const EmailIcon = <span class="material-symbols-outlined contact-icon">mail</span>
+
+export const ClockIcon = <span class="material-symbols-outlined contact-icon">schedule</span>
+
+export const LocationIcon = <span class="material-symbols-outlined contact-icon">location_on</span>

@@ -9,6 +9,10 @@ import { Services } from "~/components/Services";
 import { ChooseUs } from "~/components/ChooseUs";
 import { AboutUs } from "~/components/AboutUs";
 import { Reviews } from "~/components/Reviews"
+import { PhotoGallery } from "~/components/PhotoGallery";
+import { ContactUs } from "~/components/ContactUs";
+import { Map } from "~/components/Map"
+import { Footer } from "~/components/Footer"
 
 import { navBarFallbackData } from "../consts/copy/navBar"
 import { heroFallbackData } from "../consts/copy/hero"
@@ -16,6 +20,8 @@ import { servicesFallBackData } from "../consts/copy/services"
 import { chooseUsFallBackData } from "../consts/copy/chooseUs"
 import { aboutUsFallBackData } from "../consts/copy/aboutUs"
 import { reviewsFallBackData} from "../consts/copy/reviews"
+import { photogalleryFallBackData } from "../consts/copy/photogallery"
+import { contactUsFallBackData } from "../consts/copy/contactUs"
 
 // import { fetchFromYelp } from '../../middleware/yelp'
 
@@ -25,8 +31,6 @@ export const meta: V2_MetaFunction = () => {
     { name: "description", content: "T&D Auto Repair" },
   ];
 };
-
-
 
 export function links() {
   return [
@@ -47,13 +51,17 @@ export function links() {
 export default function Index() {
   // const { yelpRes } = useLoaderData<typeof loader> ();
   return (
-    <body>
+    <div id="app">
       <NavBar {...navBarFallbackData}/>
       <Hero {...heroFallbackData}/>
       <Services {...servicesFallBackData}/>
       <ChooseUs {...chooseUsFallBackData}/>
       <AboutUs {...aboutUsFallBackData}/>
       <Reviews {...reviewsFallBackData}/>
-    </body>
+      <PhotoGallery {...photogalleryFallBackData}/>
+      <ContactUs {...contactUsFallBackData}/>
+      <Map/>
+      <Footer/>
+    </div>
   );
 }

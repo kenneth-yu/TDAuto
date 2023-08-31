@@ -6,6 +6,11 @@ body {
   flex-wrap:wrap;
 }
 
+#app{
+  margin:0;
+  width:100%;
+}
+
 h1{
   font-size: 55px;
 }
@@ -16,6 +21,10 @@ h1{
 
 .center{
   justify-content: center;
+}
+
+.align-center{
+  align-items: center;
 }
 
 .wrap{
@@ -215,4 +224,37 @@ hr {
 
 .review-text{
   color:black;
+}
+
+.image-gallery-slide img {
+  max-height: 650px !important;
+  /* object-fit:cover !important;
+  object-position: 50% 50%; */
+}
+
+.image-gallery-thumbnail-image{
+  object-fit:cover !important;
+  object-position: 50% 50%;
+  height:85px;
+}
+
+#contact-us-section{
+  justify-content: space-around;
+}
+
+#left-section{
+  line-height:50px;
+}
+
+#right-section{
+  line-height:50px;
+}
+
+.contact-icon{
+  font-size: 45px !important;
+  padding-right:12px;
+}
+
+#map-iframe{
+  width:100%
 }
