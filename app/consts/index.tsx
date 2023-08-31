@@ -20,3 +20,5 @@ export const EmailIcon = <span className="material-symbols-outlined contact-icon
 export const ClockIcon = <span className="material-symbols-outlined contact-icon">schedule</span>
 
 export const LocationIcon = <span className="material-symbols-outlined contact-icon">location_on</span>
+
+export const gMapUrl = 'https://www.google.com/maps/dir//T+%26+D+Auto+Repair+896+4th+Ave+Brooklyn,+NY+11232/@40.6562978,-74.0028134,13z/data=!4m5!4m4!1m0!1m2!1m1!1s0x4065f096ac24cb8b:0x72b14f44749f014e'

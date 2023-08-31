@@ -1,11 +1,18 @@
 import React from "react"
-import { PhoneIcon, CellphoneIcon, EmailIcon, ClockIcon, LocationIcon } from "~/consts"
+import { Link } from "@remix-run/react";
+import { PhoneIcon, CellphoneIcon, EmailIcon, ClockIcon, LocationIcon, gMapUrl } from "~/consts"
 
 export interface Props {
     leftSection:{
         heading: string,
-        phoneNumber: string,
-        cellNumber: string,
+        phoneNumber: {
+            text:string,
+            number:number
+        },
+        cellNumber: {
+            text:string,
+            number:number
+        },
         email: string
     },
     rightSection:{
@@ -16,25 +23,29 @@ export interface Props {
 }
 
 export const ContactUs: React.FC<Props> = ({ leftSection, rightSection }) => {
+
+    const { heading, phoneNumber, cellNumber, email } = leftSection
+    const { hours, address } = rightSection
+
     return(
         <div id="contact-us" className="black-section-outer">
             <div id="contact-us-section" className="black-section-inner flex">
                 <div id="left-section">
-                    <h1 id="left-section-heading" className="display-linebreak">{leftSection.heading}</h1>
+                    <h1 id="left-section-heading" className="display-linebreak">{heading}</h1>
                     <hr/>
                     <div>
-                        <div className="flex align-center">
+                        <Link to={`tel:+${phoneNumber.number}`} className="flex align-center contact-link">
                             {PhoneIcon}
-                            <h3>{leftSection.phoneNumber}</h3>
-                        </div>
-                        <div className="flex align-center">
+                            <h3>{phoneNumber.text}</h3>
+                        </Link>
+                        <Link to={`tel:+${cellNumber.number}`} className="flex align-center contact-link">
                             {CellphoneIcon}
-                            <h3>{leftSection.cellNumber}</h3>
-                        </div>
-                        <div className="flex align-center">
+                            <h3>{cellNumber.text}</h3>
+                        </Link>
+                        <Link to={`mailto:${email}`} className="flex align-center contact-link">
                             {EmailIcon}
-                            <h3>{leftSection.email}</h3>
-                        </div>
+                            <h3>{email}</h3>
+                        </Link>
                     </div>
                 </div>
                 <div id="right-section">
@@ -43,12 +54,12 @@ export const ContactUs: React.FC<Props> = ({ leftSection, rightSection }) => {
                     <div>
                         <div className="flex align-center">
                             {ClockIcon}
-                            <h3 className="display-linebreak">{rightSection.hours}</h3>
+                            <h3 className="display-linebreak">{hours}</h3>
                         </div>
-                        <div className="flex align-center">
+                        <Link to={gMapUrl} target="_blank" className="flex align-center contact-link">
                             {LocationIcon}
-                            <h3>{rightSection.address}</h3>
-                        </div>
+                            <h3>{address}</h3>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -262,6 +262,14 @@ hr {
   height:85px;
 }
 
+.contact-link{
+  color: white;
+}
+
+.contact-link:visited{
+  color: white;
+}
+
 #contact-us-section{
   justify-content: space-around;
 }

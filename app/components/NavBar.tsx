@@ -1,5 +1,6 @@
-import React, { useEffect} from "react"
-import { Link, useLocation } from "@remix-run/react";
+import React from "react"
+import { Link } from "@remix-run/react";
+import { gMapUrl } from "~/consts"
 
 interface NavItem {
     text: string
@@ -20,7 +21,6 @@ export interface Props {
 }
 
 const parseNavOptions = (links: Props["links"]) => {
-    // return links.map((link, index) => <div key={`nav-option-${index}`} className='nav-option'>{link.text}</div>)
     return links.map((link, index) => <Link to={`#${link.src}`} key={`nav-option-${index}`} className='nav-option' reloadDocument>{link.text}</Link>)
 }
 
@@ -35,7 +35,7 @@ export const NavBar: React.FC<Props> = ({ logo, logoText, links, contactInfo, ad
                 {parseNavOptions(links)}
                 <div id="nav-bar-contact-info" className="flex">
                     <Link id='nav-phone-number' className='nav-option' to={`tel:+${contactInfo.phoneNumber}`}>{contactInfo.text}</Link>
-                    <Link id='nav-address' className='nav-option' to='https://www.google.com/maps/dir//T+%26+D+Auto+Repair+896+4th+Ave+Brooklyn,+NY+11232/@40.6562978,-74.0028134,13z/data=!4m5!4m4!1m0!1m2!1m1!1s0x4065f096ac24cb8b:0x72b14f44749f014e'>{address}</Link>
+                    <Link id='nav-address' className='nav-option' to={gMapUrl} target="_blank">{address}</Link>
                 </div>
             </div>
         </div>

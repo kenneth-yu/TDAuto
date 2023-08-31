@@ -1,8 +1,8 @@
 export const contactUsFallBackData = {
     leftSection:{
         heading: "Contact \n Us",
-        phoneNumber: "718-972-6620 (Shop)",
-        cellNumber: "917-295-1205 (Cell)",
+        phoneNumber: {text: "718-972-6620 (Shop)", number: 7189726620},
+        cellNumber: {text: "917-295-1205 (Cell)", number: 9172951205},
         email: "theTDAuto@gmail.com"
     },
     rightSection:{

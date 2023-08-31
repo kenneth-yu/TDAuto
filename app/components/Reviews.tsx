@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react"
-// import { Carousel } from 'react-responsive-carousel';
+import React from "react"
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-// import { fetchFromYelp } from '../../middleware/yelp'
-
 
 interface Review {
     name: string,
