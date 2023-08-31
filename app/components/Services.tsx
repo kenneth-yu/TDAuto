@@ -15,14 +15,14 @@ const parseServiceOptions = (serviceOptions: Props["serviceOptions"]) =>{
     return serviceOptions.map((serviceOption, index) => {
         return (<div key={`service-option-${index}`} className="stacked-logo-text">
             {serviceOption.icon}
-            <span>{serviceOption.label}</span>
+            <span className="service-label">{serviceOption.label}</span>
         </div>)
     })
 }
 
 export const Services: React.FC<Props> = ({ heading, logo, serviceOptions }) => {
     return(
-        <div id="services-outer" className="white-section-outer">
+        <div id="services" className="white-section-outer">
             <div id="services-inner" className="white-section-inner">
                 <div id='service-heading' className="flex">
                     <div>

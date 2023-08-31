@@ -2,6 +2,7 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/node";
 import styles from "~/styles.css"
+import mobileStyles from "~/mobileStyles.css"
 
 import { NavBar } from "~/components/NavBar";
 import { Hero } from "~/components/Hero";
@@ -35,6 +36,7 @@ export const meta: V2_MetaFunction = () => {
 export function links() {
   return [
     { rel: "stylesheet", href: styles },
+    // { rel: "stylesheet", href: mobileStyles},
     { rel: "preconnect", href: "https://fonts.googleapis.com"},
     { rel: "preconnect", href: "https://fonts.gstatic.com" },
     { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" },

@@ -17,7 +17,7 @@ export interface Props {
 
 export const ContactUs: React.FC<Props> = ({ leftSection, rightSection }) => {
     return(
-        <div className="black-section-outer">
+        <div id="contact-us" className="black-section-outer">
             <div id="contact-us-section" className="black-section-inner flex">
                 <div id="left-section">
                     <h1 id="left-section-heading" className="display-linebreak">{leftSection.heading}</h1>

@@ -18,7 +18,7 @@ export const servicesFallBackData = {
             icon: ElectricalIcon
         },
         {
-            label: "NYS \n Inspection",
+            label: "Inspection",
             icon: InspectionIcon
         }
     ]

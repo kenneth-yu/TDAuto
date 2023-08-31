@@ -21,12 +21,6 @@ const responsive = {
     1024: { items: 3 },
 };
 
-
-
-const calcShownReviews = () => {
-    
-}
-
 const parseReviews = (reviews: Props["reviews"]) => {
     return reviews.map((review, index) => {
         return (
@@ -39,19 +33,13 @@ const parseReviews = (reviews: Props["reviews"]) => {
 }
 
 export const Reviews: React.FC<Props> = ({ heading, reviews }) => {
-    const numOfReviewsShown = 3
-    const [ currentReviews, setCurrentReviews ] = useState(reviews.slice(0,numOfReviewsShown))
-
     return(
             <div id="reviews-outer" className="black-section-outer">
                 <div id="reviews-inner" className="black-section-inner">
                     <h1 id="reviews-heading" className="display-linebreak">{heading}</h1>
                     <hr/>
                     <div id="carousel" >
-                        <div >
-                            {/* {parseReviews(currentReviews)} */}
-                            <AliceCarousel mouseTracking responsive={responsive} items={parseReviews(reviews)} controlsStrategy="alternate"/>
-                        </div>
+                        <AliceCarousel mouseTracking responsive={responsive} items={parseReviews(reviews)} controlsStrategy="alternate"/>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,7 @@
+import React, { useEffect } from "react"
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
+import { useLocation } from "@remix-run/react";
 import {
   Links,
   LiveReload,
@@ -10,11 +12,23 @@ import {
 } from "@remix-run/react";
 
 
+
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        el.scrollIntoView({behavior: "smooth"});
+      }
+    }
+  }, [location]);
+  
   return (
     <html lang="en">
       <head>

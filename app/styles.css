@@ -1,12 +1,14 @@
+
+
 body {
   margin:0;
   font-family: 'Montserrat', sans-serif;
-  justify-content:center;
-  display:flex;
-  flex-wrap:wrap;
 }
 
 #app{
+  justify-content:center;
+  display:flex;
+  flex-wrap:wrap;
   margin:0;
   width:100%;
 }
@@ -31,6 +33,15 @@ h1{
   flex-wrap: wrap;
 }
 
+a{
+  color:black;
+  text-decoration: none;
+}
+
+a:visited{
+  color:black;
+}
+
 hr {
   border: 6px solid #4B5DB8;
   border-radius: 3px;
@@ -43,6 +54,18 @@ hr {
 }
 
 #nav-bar{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  background-color:white;
+  z-index:10000;
+  overflow: hidden;
+  position: fixed;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#nav-bar-content{
   width: 100%;
   max-width:1200px;
   justify-content:space-evenly;
@@ -50,6 +73,8 @@ hr {
   font-size:18px;
   font-weight: 700;
   padding: 8px 0px;
+  
+  /* background-color:white; */
 }
 
 #nav-logo{
@@ -57,9 +82,10 @@ hr {
   max-width: 80px;
   max-height: 80px;
   margin:auto;
+
 }
 
-.nav-option:hover{
+.nav-option:hover {
   cursor:pointer;
   color: #4B5DB8;
   text-decoration-line: underline;
@@ -76,6 +102,10 @@ hr {
   color: #4B5DB8;
 }
 
+#nav-bar-contact-info{
+  flex-direction:column;
+}
+
 .stacked-logo-text{
   display: grid;
   text-align: center;
@@ -83,7 +113,7 @@ hr {
 
 #hero{
   width:100%;
-  max-height: 700px;
+  max-height: 900px;
   position: relative;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -140,6 +170,7 @@ hr {
   width:100%;
   max-width:1000px !important;
   padding: 50px 15%;
+  overflow:hidden;
 }
 .black-section-outer{
   display: flex;
@@ -153,6 +184,7 @@ hr {
   padding: 50px 15%;
   background-color:black;
   color: white;
+  overflow:hidden;
 }
 
 #talking-points{
@@ -247,7 +279,7 @@ hr {
 }
 
 #right-section{
-  line-height:50px;
+  line-height:48px;
 }
 
 .contact-icon{
@@ -257,4 +289,79 @@ hr {
 
 #map-iframe{
   width:100%
+}
+
+#footer-inner{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#reviews-inner{
+  overflow:hidden;
+}
+
+@media screen and (max-width: 768px){
+  #nav-bar-contact-info{
+    display:none;
+  }
+  #hero{
+    margin-top:108px;
+  }
+  #hero-logo{
+    max-width:50%;
+  }
+  .white-section-outer{
+    padding-bottom:16px;
+  }
+  .white-section-inner{
+    padding: 8px 5%;
+  }
+  .black-section-outer{
+    padding-bottom:16px;
+  }
+  .black-section-inner{
+    padding: 8px 5%;
+  }
+  #ase-logo{
+    max-width:30%;
+    object-fit: contain
+  }
+  .service-icon{
+    font-size: 75px !important;
+  }
+  .service-label{
+    font-size:14px;
+  }
+
+  h1{
+    font-size:45px;
+  }
+
+  h2{
+    font-size: 32px;
+  }
+
+  .chevron-right{
+    display:none !important;
+  }
+
+  .talking-point-title{
+    margin-bottom: 12px;
+  }
+  
+  .talking-point{
+    flex-direction:column;
+    align-items: baseline;
+  }
+  .talking-point-body{
+    margin:0;
+    width:99%;
+  }
+  #contact-us-section{
+    flex-direction:column;
+  }
+  #footer-inner{
+    flex-direction:column;
+  }
+  
 }
