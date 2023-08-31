@@ -1,58 +1,72 @@
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
+- [Netlify Functions Overview](https://docs.netlify.com/functions/overview)
+
+## Netlify Setup
+
+1. Install the [Netlify CLI](https://docs.netlify.com/cli/get-started/):
+
+```sh
+npm i -g netlify-cli
+```
+
+If you have previously installed the Netlify CLI, you should update it to the latest version:
+
+```sh
+npm i -g netlify-cli@latest
+```
+
+2. Sign up and log in to Netlify:
+
+```sh
+netlify login
+```
+
+3. Create a new site:
+
+```sh
+netlify init
+```
 
 ## Development
 
-From your terminal:
+Ensure all packages are installed by running:
 
 ```sh
-npm run dev
+npm install
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+Run
+
+```sh
+netlify dev
+```
+
+Open up [http://localhost:8888](http://localhost:8888), and you're ready to go!
+
+### Adding Redirects and Rewrites
+
+To add redirects and rewrites, add them to the `netlify.toml` file or to the [\_app_redirects](_app_redirects) file. For more information about redirects and rewrites, see the [Netlify docs](https://docs.netlify.com/routing/redirects/).
+
+### Serve your site locally
+
+Run
+
+```sh
+npm run start
+```
+
+to serve your site locally at [http://localhost:8888](http://localhost:8888).
 
 ## Deployment
 
-First, build your app for production:
+There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
 
 ```sh
-npm run build
-```
+# preview deployment
+netlify deploy --build
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over relevant code/assets from your current app to the new project that's pre-configured for your target server.
-
-Most importantly, this means everything in the `app/` directory, but if you've further customized your current application outside of there it may also include:
-
-- Any assets you've added/updated in `public/`
-- Any updated versions of root files such as `.eslintrc.js`, etc.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
+# production deployment
+netlify deploy --build --prod
 ```
