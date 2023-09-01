@@ -34,7 +34,7 @@ export const NavBar: React.FC<Props> = ({ logo, logoText, links, contactInfo, ad
                 </Link>
                 {parseNavOptions(links)}
                 <div id="nav-bar-contact-info" className="flex">
-                    <Link id='nav-phone-number' className='nav-option' to={`tel:+${contactInfo.phoneNumber}`}>{contactInfo.text}</Link>
+                    <Link id='nav-phone-number' className='nav-option' to={`tel:${contactInfo.phoneNumber}`}>{contactInfo.text}</Link>
                     <Link id='nav-address' className='nav-option' to={gMapUrl} target="_blank">{address}</Link>
                 </div>
             </div>

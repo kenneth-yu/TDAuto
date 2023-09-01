@@ -34,11 +34,11 @@ export const ContactUs: React.FC<Props> = ({ leftSection, rightSection }) => {
                     <h1 id="left-section-heading" className="display-linebreak">{heading}</h1>
                     <hr/>
                     <div>
-                        <Link to={`tel:+${phoneNumber.number}`} className="flex align-center contact-link">
+                        <Link to={`tel:${phoneNumber.number}`} className="flex align-center contact-link">
                             {PhoneIcon}
                             <h3>{phoneNumber.text}</h3>
                         </Link>
-                        <Link to={`tel:+${cellNumber.number}`} className="flex align-center contact-link">
+                        <Link to={`tel:${cellNumber.number}`} className="flex align-center contact-link">
                             {CellphoneIcon}
                             <h3>{cellNumber.text}</h3>
                         </Link>
