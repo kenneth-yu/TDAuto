@@ -20,7 +20,7 @@ export const Hero: React.FC<Props> = ({ logo, bgLogo, logoAlt = "TD Auto Repair"
         priority
         lazy={false}
       />
-      <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[200px] md:max-w-[50%] m-0">
+      <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[80px] md:max-w-[20%] m-0">
         <OptimizedImage
           className="block w-full h-full object-contain"
           src={logo}
