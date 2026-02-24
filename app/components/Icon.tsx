@@ -20,7 +20,7 @@ export type IconName =
 type IconVariant = "service" | "contact" | "nav" | "carousel" | "quote";
 
 const variantClass: Record<IconVariant, string> = {
-  service: "material-symbols-outlined block leading-none text-[#4B5DB8]",
+  service: "service-icon material-symbols-outlined block leading-none text-[#4B5DB8]",
   contact: "material-symbols-outlined text-[45px] pr-3 shrink-0",
   nav: "material-symbols-outlined text-3xl",
   carousel: "material-symbols-outlined text-5xl hidden md:inline",
