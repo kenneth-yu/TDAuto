@@ -1,14 +1,12 @@
 [build]
-command = "remix build && cp _app_redirects public/_redirects"
-publish = "public"
+command = "node -r ./crypto-polyfill.cjs ./node_modules/@react-router/dev/bin.js build"
+publish = "build/client"
 
 [dev]
-command = "npm run dev"
-targetPort = 3000
+command = "react-router dev"
+targetPort = 5173
 
 [[headers]]
-for = "/build/*"
-
+for = "/assets/*"
 [headers.values]
-# Set to 60 seconds as an example. You can also add cache headers via Remix. See the documentation on [headers](https://remix.run/docs/en/v1/route/headers) in Remix.
-"Cache-Control" = "public, max-age=60, s-maxage=60"
+Cache-Control = "public, max-age=31536000, immutable"

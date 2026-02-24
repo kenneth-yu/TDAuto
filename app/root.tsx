@@ -1,21 +1,10 @@
-import React, { useEffect } from "react"
-import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction } from "@remix-run/node";
-import { useLocation } from "@remix-run/react";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
-
-
+import React, { useEffect } from "react";
+import type { LinksFunction } from "react-router";
+import { useLocation, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import "./styles.css";
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-  { rel: 'icon', href: '/favicon.png', type: 'image/png' },
+  { rel: "icon", href: "/favicon.png", type: "image/png" },
 ];
 
 export default function App() {
@@ -25,11 +14,11 @@ export default function App() {
     if (location.hash) {
       const el = document.querySelector(location.hash);
       if (el) {
-        el.scrollIntoView({behavior: "smooth"});
+        el.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, [location]);
-  
+
   return (
     <html lang="en">
       <head>
@@ -42,7 +31,6 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

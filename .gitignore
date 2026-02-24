@@ -1,9 +1,10 @@
 node_modules
-
 /.cache
-/public/build
 /build
 .env
+
+# React Router type generation
+.react-router
 
 # Local Netlify folder
 .netlify

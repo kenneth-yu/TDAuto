@@ -1,37 +1,37 @@
 {
   "private": true,
   "sideEffects": false,
+  "type": "module",
   "scripts": {
-    "build": "remix build",
-    "predev": "rimraf ./public/_redirects",
-    "dev": "remix dev",
-    "start": "netlify serve",
-    "typecheck": "tsc -b"
+    "clean": "rm -rf .react-router build node_modules/.vite node_modules/.cache tsconfig.tsbuildinfo",
+    "build": "node -r ./crypto-polyfill.cjs ./node_modules/@react-router/dev/bin.js build",
+    "dev": "node -r ./crypto-polyfill.cjs ./node_modules/@react-router/dev/bin.js dev",
+    "start": "react-router-serve build/server/index.js",
+    "typecheck": "node -r ./crypto-polyfill.cjs ./node_modules/@react-router/dev/bin.js typegen && tsc -b"
   },
   "dependencies": {
-    "@netlify/functions": "^1.3.0",
-    "@remix-run/css-bundle": "^1.19.3",
-    "@remix-run/netlify": "^1.19.3",
-    "@remix-run/node": "^1.19.3",
-    "@remix-run/react": "^1.19.3",
-    "cross-env": "^7.0.3",
-    "isbot": "^3.6.13",
-    "react": "^18.2.0",
-    "react-alice-carousel": "^2.7.1",
-    "react-dom": "^18.2.0",
-    "react-image-gallery": "^1.3.0"
+    "@tailwindcss/vite": "^4.2.0",
+    "isbot": "^5.1.17",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.13.0",
+    "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.19.3",
-    "@remix-run/eslint-config": "^1.19.3",
-    "@remix-run/serve": "^1.19.3",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8",
-    "eslint": "^8.27.0",
-    "rimraf": "^4.1.4",
-    "typescript": "^4.8.4"
+    "@netlify/vite-plugin-react-router": "^2.1.3",
+    "@react-router/dev": "^7.13.0",
+    "@react-router/fs-routes": "^7.13.0",
+    "@react-router/serve": "^7.13.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^9.15.0",
+    "typescript": "^5.6.0",
+    "vite-imagetools": "^9.0.3",
+    "vite-tsconfig-paths": "^5.0.1"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=20.12"
   }
 }
