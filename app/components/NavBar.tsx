@@ -14,6 +14,7 @@ interface ContactInfo {
 
 export interface Props {
   logo: string;
+  logoAlt?: string;
   logoText: string;
   links: NavItem[];
   contactInfo: ContactInfo;
@@ -34,6 +35,7 @@ const parseNavOptions = (links: Props["links"]) => {
 
 export const NavBar: React.FC<Props> = ({
   logo,
+  logoAlt = "",
   logoText,
   links,
   contactInfo,
@@ -56,7 +58,7 @@ export const NavBar: React.FC<Props> = ({
             <OptimizedImage
               className="block w-10 h-10 md:w-11 md:h-11 object-contain"
               src={logo}
-              alt=""
+              alt={logoAlt}
               lazy={false}
             />
             <span className="font-semibold text-sm md:text-base whitespace-nowrap">

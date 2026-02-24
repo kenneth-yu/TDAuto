@@ -24,11 +24,55 @@ import {
   contactUsData,
   footerData,
 } from "~/content";
+import { contactUs } from "~/content";
 
-export const meta: MetaFunction = () => [
-  { title: siteMeta.title },
-  { name: "description", content: siteMeta.description },
-];
+export const meta: MetaFunction = () => {
+  const url = `${siteMeta.siteUrl}/`;
+  const ogImage = `${siteMeta.siteUrl}${siteMeta.ogImage}`;
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    name: "TD Auto Repair",
+    image: ogImage,
+    url: siteMeta.siteUrl,
+    telephone: "+1-718-972-6620",
+    email: contactUs.leftSection.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "896 4th Avenue",
+      addressLocality: "Brooklyn",
+      addressRegion: "NY",
+      postalCode: "11232",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 40.6562978,
+      longitude: -74.0028134,
+    },
+    openingHoursSpecification: [
+      { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
+      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "08:00", closes: "17:00" },
+    ],
+    priceRange: "$$",
+  };
+  return [
+    { title: siteMeta.title },
+    { name: "description", content: siteMeta.description },
+    { link: { rel: "canonical", href: url } },
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: siteMeta.title },
+    { property: "og:description", content: siteMeta.description },
+    { property: "og:url", content: url },
+    { property: "og:image", content: ogImage },
+    { property: "og:site_name", content: "TD Auto Repair" },
+    { property: "og:locale", content: "en_US" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: siteMeta.title },
+    { name: "twitter:description", content: siteMeta.description },
+    { name: "twitter:image", content: ogImage },
+    { "script:ld+json": localBusiness },
+  ];
+};
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

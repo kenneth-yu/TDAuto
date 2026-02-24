@@ -4,12 +4,18 @@
  */
 
 export const siteMeta = {
-  title: "TD Auto Repair",
-  description: "T&D Auto Repair",
+  title: "TD Auto Repair | Auto Repair Shop Brooklyn NY",
+  description:
+    "TD Auto Repair in Brooklyn, NY. ASE certified mechanics. Mechanical repair, bodywork, electrical, and inspections. Serving the community since 1992. Call 718-972-6620.",
+  /** Full site URL for OG tags and canonical - update when deploying */
+  siteUrl: "https://tdautony.com",
+  /** Path to OG image (1200x630 recommended). Add public/og-image.png for best results. */
+  ogImage: "/favicon.png",
 } as const;
 
 export const navBar = {
   logoText: "Auto Repair",
+  logoAlt: "TD Auto Repair - Home",
   links: [
     { text: "Services", src: "services" },
     { text: "Contact Us", src: "contact-us" },
@@ -19,7 +25,7 @@ export const navBar = {
 } as const;
 
 export const hero = {
-  logoAlt: "TD Auto Repair",
+  logoAlt: "TD Auto Repair - Auto Repair Shop in Brooklyn NY",
 } as const;
 
 export const services = {

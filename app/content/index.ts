@@ -16,6 +16,8 @@ import {
   mapConfig,
   footer,
 } from "./content";
+
+export { contactUs };
 import { assets } from "./assets";
 
 export { siteMeta, mapConfig };
@@ -25,6 +27,7 @@ export const gMapUrl = mapConfig.directionsUrl;
 
 export const navBarData = {
   logo: assets.navBar.logo,
+  logoAlt: navBar.logoAlt,
   logoText: navBar.logoText,
   links: navBar.links,
   contactInfo: navBar.contactInfo,
